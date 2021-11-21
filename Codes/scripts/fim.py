@@ -19,7 +19,7 @@ if __name__ == "__main__":
     if hparams['mode'] == 'encode':
         vocab, loaders = prepare(hparams, news=True)
     else:
-        vocab, loaders = prepare(hparams)
+        vocab, loaders = prepare(hparams, path="./data/MIND")
 
     if hparams['encoder'] == 'fim':
         from models.Encoders.FIM import FIM_Encoder
@@ -65,7 +65,7 @@ if __name__ == "__main__":
     fimModel = FIMModel(hparams, encoder).to(hparams['device'])
 
     if hparams['mode'] == 'dev':
-        fimModel.evaluate(hparams,loaders[0],loading=True)
+        fimModel.evaluate(hparams,loaders[0])
 
     elif hparams['mode'] == 'train':
         fimModel.fit(hparams, loaders)

@@ -1,5 +1,5 @@
 hparams = {
-    'scale':'demo',
+    'scale':'small',
     'mode':'train',
     'batch_size':10,
     'title_size':20,

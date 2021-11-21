@@ -29,7 +29,6 @@ class FIM_Interactor(nn.Module):
         nn.init.xavier_normal_(self.SeqCNN3D[0].weight)
         nn.init.xavier_normal_(self.SeqCNN3D[3].weight)
 
-
     def forward(self, cdd_news_embedding, his_activated, **kwargs):
         """ construct fusion tensor between candidate news repr and history news repr at each dilation level
 

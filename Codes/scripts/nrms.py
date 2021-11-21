@@ -15,6 +15,7 @@ if __name__ == "__main__":
         'embedding_dim':300,
         'value_dim':16,
         'head_num':16,
+        'encoder':'nrms',
       }
 
     hparams = load_hparams(hparams)
@@ -22,7 +23,7 @@ if __name__ == "__main__":
     if hparams['mode'] == 'encode':
         vocab, loaders = prepare(hparams, news=True)
     else:
-        vocab, loaders = prepare(hparams)
+        vocab, loaders = prepare(hparams, path="./data/MIND")
 
     if hparams['encoder'] == 'fim':
         from models.Encoders.FIM import FIM_Encoder

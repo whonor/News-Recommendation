@@ -40,7 +40,7 @@ class BaseModel(nn.Module):
         self.device = hparams['device']
         self.learning_rate = hparams['learning_rate']
 
-        self.name = 'default'
+        self.name = hparams['name']
 
     def save(self, epoch, step, optimizers=[]):
         """
@@ -52,8 +52,8 @@ class BaseModel(nn.Module):
         #         hparams["name"], hparams["scale"], epoch, step, hparams["checkpoint"], hparams["his_size"], hparams["k"], ",".join(hparams["attrs"]))
         # else:
 
-        save_path = "data/model_params/{}/{}_epoch{}_step{}_[hs={},topk={}].model".format(
-            self.name, self.scale, epoch, step, self.his_size, self.k)
+        save_path = "data/model_params/fim/{}_{}_epoch{}_step{}_[hs={}].model".format(
+            self.name, self.scale, epoch, step, self.his_size)
 
         state_dict = self.state_dict()
 

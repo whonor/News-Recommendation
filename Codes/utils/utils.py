@@ -476,7 +476,7 @@ def load_hparams(hparams):
                         help="epochs to train the model", type=int, default=10)
 
     parser.add_argument("-bs", "--batch_size", dest="batch_size",
-                        help="batch size", type=int, default=100)
+                        help="batch size", type=int, default=64)
     parser.add_argument("-ts", "--title_size", dest="title_size",
                         help="news title size", type=int, default=20)
     parser.add_argument("--abs_size", dest="abs_size",
@@ -665,8 +665,8 @@ def generate_hparams(hparams, config):
         yield hparams
 
 
-def prepare(hparams, path="/home/peitian_zhang/Data/MIND", shuffle=True, news=False, pin_memory=True, num_workers=8, impr=False):
-    from .MIND import MIND,MIND_news,MIND_all,MIND_impr
+def prepare(hparams, path="/home/peitian_zhang/Data/MIND", shuffle=True, news=False, pin_memory=True, num_workers=1, impr=False):
+    from .mind import MIND,MIND_news,MIND_all,MIND_impr
     """ prepare dataloader and several paths
 
     Args:
