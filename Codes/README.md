@@ -13,6 +13,8 @@ scikit-learn
 [Leaderboard](https://msnews.github.io/#leaderboard), User Name: **namespace-Pt**
 ## Dataset
 download MIND dataset [HERE](https://msnews.github.io/)
+## Golve
+download glove via code automatically or take glove.zip in the special directory .vector_cache/
 ### Simple Analysis on MIND
 see [Preprocess.ipynb](manual/Preprocess.ipynb)
 ```
